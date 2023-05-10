@@ -73,7 +73,7 @@ export function Dashboard(){
                         type="text" 
                         name="description"
                         onChange={changeInputs}
-                        value={changeValues.description}
+                        value={changeValues.description || ''}
                     />
                 </div>
 
@@ -84,7 +84,7 @@ export function Dashboard(){
                         name="value"
                         step='0.01'
                         onChange={changeInputs}
-                        value={changeValues.value}
+                        value={changeValues.value || ''}
                     />
                 </div>
 
@@ -105,15 +105,13 @@ export function Dashboard(){
                 </button>
             </form>
 
-            {
-                data != '' ? 
+            {data &&
+                data.length > 0 ? 
                     <EntryTable data={data} onRegisterDelete={deleteRegister}/>
                     : 
                     <h2 className={styles.noRegistersMessage}>Nenhum registro lançado</h2>
             }
 
-
-            
         </div>
     );
 };
