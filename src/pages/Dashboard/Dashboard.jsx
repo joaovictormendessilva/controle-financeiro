@@ -41,6 +41,7 @@ export function Dashboard(){
         setChangeValues({
             description: '',
             value: '',
+            type: ''
         })
 
     }
@@ -88,14 +89,14 @@ export function Dashboard(){
                     />
                 </div>
 
-                <div className={styles.radioOptions} onChange={changeInputs} required>
+                <div className={styles.radioOptions} onChange={changeInputs}>
                     <div className={styles.formRadioControl}>
-                        <input type="radio" value="Entrada" name='type'/>
+                        <input type="radio" value="Entrada" name='type' required checked={changeValues.type === "Entrada"}/>
                         <label htmlFor="entry">Entrada</label>
                     </div>
 
                     <div className={styles.formRadioControl}>
-                        <input type="radio" value="Saída" name='type'/>
+                        <input type="radio" value="Saída" name='type' checked={changeValues.type === "Saída"}/>
                         <label htmlFor="withdraw">Saída</label>
                     </div>
                 </div>
