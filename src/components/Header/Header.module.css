@@ -1,0 +1,12 @@
+.header{
+    text-align: center;
+    padding: 2rem 0 3rem;
+    background-color: var(--primary);
+    color: #fff;
+}
+
+@media (max-width: 480px){
+    .header{
+        width: 480px;
+    }
+}

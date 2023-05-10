@@ -1,0 +1,90 @@
+.dashboard{
+    width: 67.5rem;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.dashboard .entryForm{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+
+    box-shadow: 0px 0px 16px -9px rgba(0,0,0,0.75);
+}
+
+.dashboard .entryForm .formControl{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.dashboard .entryForm .formControl input{
+    padding: 0.25rem;
+}
+
+.dashboard .entryForm .radioOptions{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.dashboard .entryForm .radioOptions .formRadioControl{
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+    padding-top: 0.8rem;
+}
+
+.dashboard .entryForm .radioOptions .formRadioControl input[type = radio]{
+    accent-color: var(--primary);
+}
+
+.dashboard .entryForm .entryButton{
+    background-color: var(--primary);
+    border: var(--primary) 1px solid;
+    color: #fff;
+    width: 6.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0px 0px 16px -9px rgba(0,0,0,0.75);
+    transition: 1s;
+}
+
+.dashboard .entryForm .entryButton:hover{
+    background-color: var(--secondary);
+    border: var(--secondary) 1px solid;
+}
+
+.noRegistersMessage{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+@media (max-width: 1080px){
+    .dashboard{
+        width: 768px;
+    }
+}
+
+@media (max-width: 768px){
+    .dashboard{
+        width: 480px;
+    }
+
+    .dashboard .entryForm{
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .dashboard .entryForm .entryButton{
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px){
+    
+}
