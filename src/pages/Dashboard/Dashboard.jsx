@@ -88,7 +88,7 @@ export function Dashboard(){
                     />
                 </div>
 
-                <div className={styles.radioOptions} onChange={changeInputs} >
+                <div className={styles.radioOptions} onChange={changeInputs} required>
                     <div className={styles.formRadioControl}>
                         <input type="radio" value="Entrada" name='type'/>
                         <label htmlFor="entry">Entrada</label>
