@@ -91,12 +91,12 @@ export function Dashboard(){
 
                 <div className={styles.radioOptions} onChange={changeInputs}>
                     <div className={styles.formRadioControl}>
-                        <input type="radio" value="Entrada" name='type' required checked={changeValues.type === "Entrada"}/>
+                        <input type="radio" id='entry' value="Entrada" name='type' required checked={changeValues.type === "Entrada"}/>
                         <label htmlFor="entry">Entrada</label>
                     </div>
 
                     <div className={styles.formRadioControl}>
-                        <input type="radio" value="Saída" name='type' checked={changeValues.type === "Saída"}/>
+                        <input type="radio" id='withdraw' value="Saída" name='type' checked={changeValues.type === "Saída"}/>
                         <label htmlFor="withdraw">Saída</label>
                     </div>
                 </div>
