@@ -26,7 +26,6 @@ export function EntryTable({ data, onRegisterDelete}){
                                             data.type == 'Entrada'
                                             ?   <>
                                                     <td className={styles.tableValuePositive} >{formatter.format(data.value)}</td>
-                                                    {/* <td className={styles.tableValuePositive} >R${data.value}</td> */}
                                                     <td className={styles.tableTypeIconPositive}>
                                                         <i className="bi bi-arrow-up-circle-fill"></i>
                                                     </td>

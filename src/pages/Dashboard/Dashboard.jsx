@@ -24,25 +24,35 @@ export function Dashboard(){
     function handleSubmit(event){
         event.preventDefault();
 
-        let registers = new Array();
+        parseFloat(setChangeValues.value);
 
-        if (localStorage.hasOwnProperty("registers")) {
-            registers = JSON.parse(localStorage.getItem("registers"));
+        if (changeValues.value > 0) {
+            
+            let registers = new Array();
+    
+            if (localStorage.hasOwnProperty("registers")) {
+                registers = JSON.parse(localStorage.getItem("registers"));
+            }
+    
+            registers.push(changeValues);
+    
+            localStorage.setItem("registers", JSON.stringify(registers));
+    
+            setAlter((alter) => {
+                return !alter;
+            })
+    
+            setChangeValues({
+                description: '',
+                value: '',
+                type: ''
+            })
+        }else{
+            alert(`O valor ${changeValues.value} é inválido, tente outro.`);
         }
 
-        registers.push(changeValues);
+        
 
-        localStorage.setItem("registers", JSON.stringify(registers));
-
-        setAlter((alter) => {
-            return !alter;
-        })
-
-        setChangeValues({
-            description: '',
-            value: '',
-            type: ''
-        })
 
     }
 
