@@ -75,6 +75,7 @@ export function Dashboard(){
                         name="description"
                         onChange={changeInputs}
                         value={changeValues.description || ''}
+                        required
                     />
                 </div>
 
@@ -86,6 +87,7 @@ export function Dashboard(){
                         step='0.01'
                         onChange={changeInputs}
                         value={changeValues.value || ''}
+                        required
                     />
                 </div>
 

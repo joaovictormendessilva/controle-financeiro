@@ -2,6 +2,8 @@ import styles from './EntryTable.module.css';
 
 export function EntryTable({ data, onRegisterDelete}){
 
+    const formatter = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
+
     return (
         <div className={styles.entryTable}>
             <table>
@@ -23,13 +25,14 @@ export function EntryTable({ data, onRegisterDelete}){
                                         {
                                             data.type == 'Entrada'
                                             ?   <>
-                                                    <td className={styles.tableValuePositive} >R${data.value}</td>
+                                                    <td className={styles.tableValuePositive} >{formatter.format(data.value)}</td>
+                                                    {/* <td className={styles.tableValuePositive} >R${data.value}</td> */}
                                                     <td className={styles.tableTypeIconPositive}>
                                                         <i className="bi bi-arrow-up-circle-fill"></i>
                                                     </td>
                                                 </>
                                             :   <>
-                                                    <td className={styles.tableValueNegative} >R${data.value}</td>
+                                                    <td className={styles.tableValueNegative} >{formatter.format(data.value)}</td>
                                                     <td className={[styles.tableTypeIconNegative]}>
                                                         <i className="bi bi-arrow-down-circle-fill"></i>
                                                     </td>

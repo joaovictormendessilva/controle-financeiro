@@ -8,7 +8,21 @@ export function Cards({ data }){
         let entry = data.filter((data) => data.type === 'Entrada').reduce((total, valor) => total + parseFloat(valor.value), 0).toFixed(2);
         let withdraw = data.filter((data) => data.type === 'Saída').reduce((total, valor) => total + parseFloat(valor.value), 0).toFixed(2);
 
-        sum = (entry - withdraw).toFixed(2);
+        sum = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(entry - withdraw);
+    }
+
+    function totalEntry(){
+        let entry = data.filter((data) => data.type === 'Entrada').reduce((total, valor) => total + parseFloat(valor.value), 0).toFixed(2);
+
+        const formatted = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(parseFloat(entry));
+        return formatted
+    }
+
+    function totalWithdraw(){
+        let withDraw = data.filter((data) => data.type === 'Saída').reduce((total, valor) => total + parseFloat(valor.value), 0).toFixed(2);
+
+        const formatted = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(parseFloat(withDraw));
+        return formatted
     }
 
     return (
@@ -19,12 +33,12 @@ export function Cards({ data }){
                     <span><i className="bi bi-arrow-up-circle-fill"></i></span>
                 </div>
                 <div>
-                    <h2>R$
+                    <h2>
                         {
                             data ?
-                                data.filter((data) => data.type === 'Entrada').reduce((total, valor) => total + parseFloat(valor.value), 0).toFixed(2)
+                                totalEntry()
                                 :
-                                '0.00'
+                                'R$ 0,00'
                         }
                     </h2>
                 </div>
@@ -36,12 +50,12 @@ export function Cards({ data }){
                     <span><i className="bi bi-arrow-down-circle-fill"></i></span>
                 </div>
                 <div>
-                    <h2>R$
+                    <h2>
                         {
                             data ?
-                                data.filter((data) => data.type === 'Saída').reduce((total, valor) => total + parseFloat(valor.value), 0).toFixed(2)
+                                totalWithdraw()
                                 :
-                                '0.00'
+                                'R$ 0,00'
                         }
                     </h2>
                 </div>
@@ -53,12 +67,12 @@ export function Cards({ data }){
                     <span><i className="bi bi-currency-dollar"></i></span>
                 </div>
                 <div>
-                    <h2>R$
+                    <h2>
                         {
                             data ?
                                 sum
                                 :
-                                '0.00'
+                                'R$ 0,00'
                         }
                     </h2>
                 </div>
